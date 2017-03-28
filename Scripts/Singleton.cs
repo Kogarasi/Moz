@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Moz {
+﻿namespace Moz {
 	public class Singleton<T> where T: class, new() {
 		static private T _instance;
 

@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace Moz {
+﻿namespace Moz {
 	public class Variable<T>: Publisher<T> where T: new() {
 		private T _value;
 
-		public Variable(T _value){
-			this._value = _value;
-		}
+    public Variable() {
+      this._value = default(T);
+
+      if(this._value == null) {
+        this._value = new T();
+      }
+    }
 
 		public T value {
 			get { return _value; }
